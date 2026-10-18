@@ -3,89 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban and Architect Solution | Designing Spaces. Defining the Future.</title>
+    <title>Urban & Architect Solution | Modern Architecture Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] },
-                    colors: { dark: '#0A0A0A', stone: '#111111', accent: '#C9A227' }
+                    colors: { 
+                        dark: '#0C0C0C', 
+                        stone: '#1A1A1A', 
+                        accent: '#E8B86D',
+                        muted: '#8A8A8A'
+                    }
                 }
             }
         }
     </script>
-    <style>
-        .logo {
-            background: transparent !important;
-            mix-blend-mode: screen;
-        }
-    </style>
 </head>
-<body class="bg-[#0A0A0A] text-white font-sans antialiased">
-    <div id="liveClock" class="fixed top-4 right-4 z-50 text-xs text-gray-400 bg-black/60 px-3 py-1 rounded"></div>
+<body class="bg-dark text-white font-sans antialiased">
 
-    <header class="fixed top-0 w-full z-40 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/10">
-        <nav class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-4 group">
-                <img src="logo.png" alt="UAS Logo" class="logo h-14 w-auto">
-                <div class="hidden lg:block">
-                    <div class="font-serif text-xl tracking-wide leading-tight">URBAN AND ARCHITECT</div>
-                    <div class="text-xs tracking-[0.3em] text-accent -mt-1">SOLUTION</div>
-                </div>
-            </a>
-            <div class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest">
-                <a href="index.html" class="hover:text-accent transition">Home</a>
-                <a href="portfolio.html" class="hover:text-accent transition">Portfolio</a>
-                <a href="services.html" class="hover:text-accent transition">Services</a>
-                <a href="calculator.html" class="hover:text-accent transition">Calculator</a>
-                <a href="about.html" class="hover:text-accent transition">About</a>
-                <a href="contact.html" class="hover:text-accent transition">Contact</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-sm border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-2xl tracking-tight">UAS</a>
+            <div class="hidden md:flex items-center gap-10 text-sm text-muted">
+                <a href="portfolio.html" class="hover:text-white transition">Work</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="calculator.html" class="hover:text-white transition">Calculator</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
             </div>
-            <button id="menuBtn" class="md:hidden text-2xl">☰</button>
-        </nav>
-    </header>
+            <a href="contact.html" class="text-sm border border-white/20 px-5 py-2 hover:bg-white hover:text-dark transition">Get in Touch</a>
+        </div>
+    </nav>
 
-    <section class="relative h-screen flex items-center justify-center bg-[#0A0A0A]">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1920')] bg-cover bg-center opacity-40"></div>
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 text-center px-6">
-            <img src="logo.png" alt="UAS" class="logo h-36 md:h-44 mx-auto mb-6">
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">Designing Spaces.<br>Defining the Future.</h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Modern architectural design, planning & approval solutions. BNBC compliant residential & commercial projects.</p>
-            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="portfolio.html" class="px-8 py-4 border border-white text-sm uppercase tracking-widest hover:bg-white hover:text-dark transition">View Projects</a>
-                <a href="calculator.html" class="px-8 py-4 bg-accent text-dark text-sm uppercase tracking-widest hover:bg-yellow-600 transition">Cost Calculator</a>
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-accent text-sm tracking-widest uppercase mb-6">Architecture Studio • Bogura</p>
+                <h1 class="font-serif text-6xl lg:text-7xl leading-tight">Spaces that<br>define living.</h1>
+                <p class="mt-8 text-muted text-lg max-w-md leading-relaxed">Contemporary architectural design for residential and commercial projects. BNBC compliant. Thoughtfully crafted.</p>
+                <div class="mt-12 flex gap-6">
+                    <a href="portfolio.html" class="bg-accent text-dark px-8 py-4 text-sm tracking-wide hover:bg-yellow-500 transition">View Projects</a>
+                    <a href="calculator.html" class="border border-white/20 px-8 py-4 text-sm tracking-wide hover:bg-white hover:text-dark transition">Estimate Cost</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/5] bg-stone overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Architecture">
+                </div>
+                <div class="absolute -bottom-8 -left-8 bg-accent text-dark p-6">
+                    <div class="text-3xl font-serif">12+</div>
+                    <div class="text-xs tracking-wide mt-1">Years of Practice</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="border-t border-white/10 py-12 px-6 bg-[#0A0A0A]">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-4">
-                <img src="logo.png" alt="Logo" class="logo h-12">
+    <!-- Featured Work -->
+    <section class="py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
                 <div>
-                    <div class="font-serif">Urban and Architect Solution</div>
-                    <div class="text-xs text-gray-500">© 2026 • Bogura, Bangladesh</div>
+                    <p class="text-accent text-sm tracking-widest uppercase mb-3">Selected Work</p>
+                    <h2 class="font-serif text-4xl">Featured Projects</h2>
+                </div>
+                <a href="portfolio.html" class="text-sm text-muted hover:text-white transition">View All →</a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group">
+                    <div class="aspect-[16/10] bg-stone overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                    </div>
+                    <p class="text-accent text-xs tracking-widest uppercase">Residential</p>
+                    <h3 class="font-serif text-2xl mt-2">Modern Family Residence</h3>
+                    <p class="text-muted text-sm mt-1">Bogura • 2024</p>
+                </div>
+                <div class="group">
+                    <div class="aspect-[16/10] bg-stone overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                    </div>
+                    <p class="text-accent text-xs tracking-widest uppercase">Commercial</p>
+                    <h3 class="font-serif text-2xl mt-2">Urban Mixed-Use Building</h3>
+                    <p class="text-muted text-sm mt-1">Bogura • 2025</p>
                 </div>
             </div>
-            <div class="flex gap-6 text-sm text-gray-400">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-32 px-8 bg-stone">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-3 text-center">What We Do</p>
+            <h2 class="font-serif text-4xl text-center mb-20">Services</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="text-accent text-4xl font-serif mb-6">01</div>
+                    <h3 class="text-xl mb-3">Architectural Design</h3>
+                    <p class="text-muted text-sm leading-relaxed">Complete design solutions from concept to construction drawings. BNBC compliant detailing.</p>
+                </div>
+                <div>
+                    <div class="text-accent text-4xl font-serif mb-6">02</div>
+                    <h3 class="text-xl mb-3">3D Visualization</h3>
+                    <p class="text-muted text-sm leading-relaxed">Photorealistic renders and walkthroughs for client presentations and approvals.</p>
+                </div>
+                <div>
+                    <div class="text-accent text-4xl font-serif mb-6">03</div>
+                    <h3 class="text-xl mb-3">Master Planning</h3>
+                    <p class="text-muted text-sm leading-relaxed">Site planning, zoning studies, and large-scale development layouts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-32 px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-serif text-5xl">Start a Project</h2>
+            <p class="text-muted mt-6 text-lg">Tell us about your site. We’ll help you understand the possibilities.</p>
+            <a href="contact.html" class="inline-block mt-10 bg-accent text-dark px-10 py-4 text-sm tracking-wide hover:bg-yellow-500 transition">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted">
+            <div class="font-serif text-lg text-white">Urban & Architect Solution</div>
+            <div class="flex gap-8">
                 <a href="tel:+8801352693918" class="hover:text-white">+880 1352-693918</a>
                 <a href="mailto:uarchsolution@gmail.com" class="hover:text-white">uarchsolution@gmail.com</a>
-                <a href="contact.html" class="hover:text-white">Contact</a>
             </div>
+            <div class="text-xs">© 2026 • Bogura, Bangladesh</div>
         </div>
     </footer>
 
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            document.getElementById('liveClock').textContent = now.toLocaleString('en-BD', options);
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
 </body>
 </html>
