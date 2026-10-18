@@ -16,15 +16,23 @@
             }
         }
     </script>
+    <style>
+        .logo-glow {
+            filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.3));
+        }
+    </style>
 </head>
 <body class="bg-dark text-white font-sans antialiased">
     <div id="liveClock" class="fixed top-4 right-4 z-50 text-xs text-gray-400 bg-dark/80 px-3 py-1 rounded border border-white/10"></div>
 
     <header class="fixed top-0 w-full z-40 bg-dark/95 backdrop-blur-md border-b border-white/10">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="UAS.jpg" alt="UAS Logo" class="h-12 w-auto">
-                <span class="font-serif text-lg tracking-wide hidden sm:block">URBAN AND ARCHITECT SOLUTION</span>
+        <nav class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <img src="UAS.jpg" alt="UAS Logo" class="h-14 w-auto logo-glow group-hover:scale-105 transition duration-300">
+                <div class="hidden lg:block">
+                    <div class="font-serif text-xl tracking-wide leading-tight">URBAN AND ARCHITECT</div>
+                    <div class="text-xs tracking-[0.3em] text-accent -mt-1">SOLUTION</div>
+                </div>
             </a>
             <div class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest">
                 <a href="index.html" class="hover:text-accent transition">Home</a>
@@ -38,10 +46,12 @@
         </nav>
     </header>
 
+    <!-- Hero with Logo -->
     <section class="relative h-screen flex items-center justify-center">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1920')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-black/70"></div>
-        <div class="relative z-10 text-center px-6 max-w-5xl">
+        <div class="absolute inset-0 bg-black/75"></div>
+        <div class="relative z-10 text-center px-6">
+            <img src="UAS.jpg" alt="UAS" class="h-32 md:h-40 mx-auto mb-8 logo-glow">
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">Designing Spaces.<br>Defining the Future.</h1>
             <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Modern architectural design, planning & approval solutions. BNBC compliant residential & commercial projects.</p>
             <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -52,22 +62,25 @@
     </section>
 
     <footer class="border-t border-white/10 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-            <div class="flex items-center gap-3">
-                <img src="UAS.jpg" alt="Logo" class="h-10">
-                <span>© 2026 Urban and Architect Solution</span>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <img src="UAS.jpg" alt="Logo" class="h-12 logo-glow">
+                <div>
+                    <div class="font-serif">Urban and Architect Solution</div>
+                    <div class="text-xs text-gray-500">© 2026 • Bogura, Bangladesh</div>
+                </div>
             </div>
-            <div class="flex gap-6">
+            <div class="flex gap-6 text-sm text-gray-400">
                 <a href="tel:+8801352693918" class="hover:text-white">+880 1352-693918</a>
+                <a href="mailto:uarchsolution@gmail.com" class="hover:text-white">uarchsolution@gmail.com</a>
                 <a href="contact.html" class="hover:text-white">Contact</a>
-                <a href="admin.html" class="hover:text-white text-xs">Admin</a>
             </div>
         </div>
     </footer>
 
     <script>
         document.getElementById('menuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+            document.getElementById('mobileMenu')?.classList.toggle('hidden');
         });
         function updateClock() {
             const now = new Date();
