@@ -11,7 +11,10 @@
     </script>
 </head>
 <body class="bg-dark text-white font-sans">
-    <header class="fixed top-0 w-full z-50 bg-dark/95 backdrop-blur border-b border-white/10">
+    <!-- Live Clock -->
+    <div id="liveClock" class="fixed top-4 right-4 z-50 text-xs text-gray-400 bg-dark/80 px-3 py-1 rounded border border-white/10"></div>
+
+    <header class="fixed top-0 w-full z-40 bg-dark/95 backdrop-blur border-b border-white/10">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" class="h-10" alt="Logo">
@@ -29,50 +32,47 @@
 
     <main class="pt-32 pb-20 px-6">
         <div class="max-w-7xl mx-auto">
-            <h1 class="font-serif text-5xl text-center mb-12">Our Projects</h1>
+            <h1 class="font-serif text-5xl text-center mb-4">Portfolio of Completed Work</h1>
+            <p class="text-center text-gray-400 mb-12">Our architectural projects across Bogura and Bangladesh</p>
 
-            <div class="flex flex-wrap justify-center gap-3 mb-12 text-sm uppercase tracking-wider">
-                <button onclick="filter('all')" class="filter-btn px-5 py-2 border border-accent bg-accent/10">All</button>
-                <button onclick="filter('residential')" class="filter-btn px-5 py-2 border border-white/20 hover:border-accent">Residential</button>
-                <button onclick="filter('commercial')" class="filter-btn px-5 py-2 border border-white/20 hover:border-accent">Commercial</button>
-                <button onclick="filter('master')" class="filter-btn px-5 py-2 border border-white/20 hover:border-accent">Master Planning</button>
-                <button onclick="filter('landscape')" class="filter-btn px-5 py-2 border border-white/20 hover:border-accent">Landscape</button>
-            </div>
-
-            <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="project residential">
-                    <div class="group relative overflow-hidden h-80">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-                            <div>
-                                <p class="text-accent text-xs uppercase">Residential</p>
-                                <h3 class="text-xl font-serif">Modern Villa</h3>
-                                <a href="project.html" class="text-sm mt-2 inline-block border-b">View Project</a>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group relative overflow-hidden">
+                    <img src="images/project1.jpg" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500" alt="Modern Residential Building">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <p class="text-accent text-sm">Residential</p>
+                            <h3 class="text-2xl font-serif">Modern Apartment Building</h3>
+                            <p class="text-sm text-gray-300">Bogura</p>
                         </div>
                     </div>
                 </div>
-                <div class="project commercial">
-                    <div class="group relative overflow-hidden h-80">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-                            <div>
-                                <p class="text-accent text-xs uppercase">Commercial</p>
-                                <h3 class="text-xl font-serif">Office Building</h3>
-                                <a href="project.html" class="text-sm mt-2 inline-block border-b">View Project</a>
-                            </div>
+                <div class="group relative overflow-hidden">
+                    <img src="images/project2.jpg" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500" alt="Commercial Building">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <p class="text-accent text-sm">Commercial</p>
+                            <h3 class="text-2xl font-serif">Urban Mixed-Use Building</h3>
+                            <p class="text-sm text-gray-300">Bogura</p>
                         </div>
                     </div>
                 </div>
-                <div class="project master">
-                    <div class="group relative overflow-hidden h-80">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-                            <div>
-                                <p class="text-accent text-xs uppercase">Master Planning</p>
-                                <h3 class="text-xl font-serif">Township Layout</h3>
-                                <a href="project.html" class="text-sm mt-2 inline-block border-b">View Project</a>
-                            </div>
+                <div class="group relative overflow-hidden">
+                    <img src="images/project3.jpg" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500" alt="Residential Project">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <p class="text-accent text-sm">Residential</p>
+                            <h3 class="text-2xl font-serif">Premium Apartment Complex</h3>
+                            <p class="text-sm text-gray-300">Bogura</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden">
+                    <img src="images/project4.jpg" class="w-full h-96 object-cover group-hover:scale-105 transition duration-500" alt="Completed Residential">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <p class="text-accent text-sm">Residential</p>
+                            <h3 class="text-2xl font-serif">5-Story Residential Building</h3>
+                            <p class="text-sm text-gray-300">Malgram, Bogura Sadar • 2025</p>
                         </div>
                     </div>
                 </div>
@@ -81,13 +81,13 @@
     </main>
 
     <script>
-        function filter(cat) {
-            document.querySelectorAll('.project').forEach(p => {
-                p.style.display = (cat === 'all' || p.classList.contains(cat)) ? 'block' : 'none';
-            });
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('border-accent', 'bg-accent/10'));
-            event.target.classList.add('border-accent', 'bg-accent/10');
+        function updateClock() {
+            const now = new Date();
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('liveClock').textContent = now.toLocaleString('en-BD', options);
         }
+        updateClock();
+        setInterval(updateClock, 1000);
     </script>
 </body>
 </html>
