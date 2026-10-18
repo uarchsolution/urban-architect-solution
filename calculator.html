@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator | Urban and Architect Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] }, colors: { dark: '#0A0A0A', accent: '#C9A227' } } } }
+    </script>
+</head>
+<body class="bg-dark text-white font-sans">
+    <header class="fixed top-0 w-full z-50 bg-dark/95 backdrop-blur border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" class="h-10" alt="Logo">
+                <span class="font-serif hidden sm:block">URBAN AND ARCHITECT SOLUTION</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-accent">Home</a>
+                <a href="portfolio.html" class="hover:text-accent">Portfolio</a>
+                <a href="services.html" class="hover:text-accent">Services</a>
+                <a href="calculator.html" class="text-accent">Calculator</a>
+                <a href="contact.html" class="hover:text-accent">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="font-serif text-4xl md:text-5xl text-center mb-4">Project Cost Calculator</h1>
+            <p class="text-center text-gray-400 mb-16">Approximate Building Cost & Design Charge Calculator</p>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Building Cost -->
+                <div class="bg-stone p-8 border border-white/10">
+                    <h2 class="text-2xl font-serif mb-6">Approximate Building Cost</h2>
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Total Built-up Area (sft)</label>
+                            <input type="number" id="area" placeholder="e.g. 2500" class="w-full bg-dark border border-white/20 px-4 py-3 focus:border-accent outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Quality Level</label>
+                            <select id="quality" class="w-full bg-dark border border-white/20 px-4 py-3 focus:border-accent outline-none">
+                                <option value="1800">Standard (৳1,800 / sft)</option>
+                                <option value="2500" selected>Premium (৳2,500 / sft)</option>
+                                <option value="3500">Luxury (৳3,500 / sft)</option>
+                            </select>
+                        </div>
+                        <button onclick="calcBuilding()" class="w-full bg-accent text-dark py-3 uppercase tracking-widest text-sm font-medium">Calculate Building Cost</button>
+                        <div id="buildingResult" class="mt-6 p-5 bg-dark border border-accent/30 hidden">
+                            <p class="text-sm text-gray-400">Estimated Building Cost</p>
+                            <p class="text-3xl font-serif text-accent mt-1" id="buildingCost">৳ 0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Charge -->
+                <div class="bg-stone p-8 border border-white/10">
+                    <h2 class="text-2xl font-serif mb-6">Design Charge Calculator</h2>
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Project Area (sft)</label>
+                            <input type="number" id="designArea" placeholder="e.g. 2000" class="w-full bg-dark border border-white/20 px-4 py-3 focus:border-accent outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Design Rate (per sft)</label>
+                            <select id="designRate" class="w-full bg-dark border border-white/20 px-4 py-3 focus:border-accent outline-none">
+                                <option value="40">Basic (৳40 / sft)</option>
+                                <option value="55" selected>Standard (৳55 / sft)</option>
+                                <option value="75">Premium (৳75 / sft)</option>
+                                <option value="100">Full Package (৳100 / sft)</option>
+                            </select>
+                        </div>
+                        <button onclick="calcDesign()" class="w-full bg-accent text-dark py-3 uppercase tracking-widest text-sm font-medium">Calculate Design Charge</button>
+                        <div id="designResult" class="mt-6 p-5 bg-dark border border-accent/30 hidden">
+                            <p class="text-sm text-gray-400">Estimated Design Fee</p>
+                            <p class="text-3xl font-serif text-accent mt-1" id="designCost">৳ 0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-gray-500 mt-12">* Rates are approximate and may vary based on project complexity, location, and current market conditions. Contact us for exact quotation.</p>
+        </div>
+    </main>
+
+    <script>
+        function formatBDT(num) {
+            return '৳ ' + num.toLocaleString('en-IN');
+        }
+        function calcBuilding() {
+            const area = parseFloat(document.getElementById('area').value) || 0;
+            const rate = parseFloat(document.getElementById('quality').value);
+            const total = area * rate;
+            document.getElementById('buildingCost').innerText = formatBDT(total);
+            document.getElementById('buildingResult').classList.remove('hidden');
+        }
+        function calcDesign() {
+            const area = parseFloat(document.getElementById('designArea').value) || 0;
+            const rate = parseFloat(document.getElementById('designRate').value);
+            const total = area * rate;
+            document.getElementById('designCost').innerText = formatBDT(total);
+            document.getElementById('designResult').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
