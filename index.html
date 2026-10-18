@@ -28,24 +28,21 @@
                 radial-gradient(ellipse at 80% 70%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
             background-attachment: fixed;
         }
-        .bg-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
     </style>
 </head>
-<body class="bg-dark text-white font-sans antialiased bg-pattern">
+<body class="bg-dark text-white font-sans antialiased">
 
-    <!-- Live Clock -->
-    <div id="liveClock" class="fixed top-5 right-5 z-50 text-xs text-muted bg-card/80 backdrop-blur px-3 py-1.5 rounded border border-white/5"></div>
+    <!-- Live Clock - bottom right to avoid overlapping branding -->
+    <div id="liveClock" class="fixed bottom-5 right-5 z-50 text-xs text-muted bg-card/90 backdrop-blur px-3 py-1.5 rounded border border-white/10"></div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-40 bg-dark/95 backdrop-blur border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" alt="Logo" class="h-10" onerror="this.style.display='none'">
-                <span class="font-serif text-xl tracking-wide">URBAN AND ARCHITECT SOLUTION</span>
+                <span class="font-serif text-lg tracking-wide hidden sm:block">URBAN AND ARCHITECT SOLUTION</span>
             </a>
-            <div class="hidden md:flex items-center gap-8 text-sm text-muted">
+            <div class="hidden md:flex items-center gap-6 text-sm text-muted">
                 <a href="index.html" class="hover:text-white transition">Home</a>
                 <a href="portfolio.html" class="hover:text-white transition">Portfolio</a>
                 <a href="services.html" class="hover:text-white transition">Services</a>
@@ -64,9 +61,9 @@
             <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-dark/40"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/50"></div>
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-8 py-32">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-32">
             <p class="text-accent text-sm tracking-[0.3em] uppercase mb-6">Architecture Studio • Bogura</p>
-            <h1 class="font-serif text-6xl md:text-8xl leading-none max-w-4xl">Designing<br>Spaces.<br>Defining<br>the Future.</h1>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-none max-w-4xl">Designing<br>Spaces.<br>Defining<br>the Future.</h1>
             <p class="mt-8 text-muted text-lg max-w-xl">Modern architectural design, planning and approval solutions. BNBC compliant residential and commercial projects.</p>
             <div class="mt-12 flex flex-col sm:flex-row gap-4">
                 <a href="portfolio.html" class="bg-accent text-dark px-8 py-4 text-sm font-medium hover:bg-yellow-500 transition text-center">View Projects</a>
@@ -76,7 +73,7 @@
     </section>
 
     <!-- Featured Projects -->
-    <section class="py-28 px-8 relative">
+    <section class="py-28 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-16">
                 <div>
@@ -88,7 +85,7 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <a href="portfolio.html" class="group block">
                     <div class="aspect-[16/11] bg-card overflow-hidden mb-5 border border-white/5">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                        <img src="images/project1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80'">
                     </div>
                     <p class="text-accent text-xs tracking-widest uppercase">Residential</p>
                     <h3 class="font-serif text-2xl mt-2 group-hover:text-accent transition">Modern Apartment Building</h3>
@@ -96,34 +93,33 @@
                 </a>
                 <a href="portfolio.html" class="group block">
                     <div class="aspect-[16/11] bg-card overflow-hidden mb-5 border border-white/5">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                        <img src="images/project2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project" onerror="this.src='https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80'">
                     </div>
-                    <p class="text-accent text-xs tracking-widest uppercase">Commercial</p>
-                    <h3 class="font-serif text-2xl mt-2 group-hover:text-accent transition">Urban Mixed-Use</h3>
-                    <p class="text-muted text-sm mt-1">Bogura</p>
+                    <p class="text-accent text-xs tracking-widest uppercase">Residential</p>
+                    <h3 class="font-serif text-2xl mt-2 group-hover:text-accent transition">5-Story Residential</h3>
+                    <p class="text-muted text-sm mt-1">Malgram, Bogura</p>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Services -->
-    <section class="py-28 px-8 bg-card relative">
-        <div class="absolute inset-0 opacity-5" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80'); background-size: cover;"></div>
-        <div class="max-w-7xl mx-auto relative">
+    <section class="py-28 px-6 bg-card">
+        <div class="max-w-7xl mx-auto">
             <p class="text-accent text-sm tracking-widest uppercase mb-3 text-center">Expertise</p>
             <h2 class="font-serif text-4xl md:text-5xl text-center mb-20">What We Do</h2>
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="border border-white/10 p-8 hover:border-accent/40 transition bg-dark/50 backdrop-blur-sm">
+                <div class="border border-white/10 p-8 hover:border-accent/40 transition">
                     <div class="text-accent text-3xl font-serif mb-6">01</div>
                     <h3 class="text-xl mb-3">Architectural Design</h3>
                     <p class="text-muted text-sm leading-relaxed">Complete design from concept to construction drawings. BNBC compliant detailing and documentation.</p>
                 </div>
-                <div class="border border-white/10 p-8 hover:border-accent/40 transition bg-dark/50 backdrop-blur-sm">
+                <div class="border border-white/10 p-8 hover:border-accent/40 transition">
                     <div class="text-accent text-3xl font-serif mb-6">02</div>
                     <h3 class="text-xl mb-3">3D Visualization</h3>
                     <p class="text-muted text-sm leading-relaxed">Photorealistic renders and walkthroughs for presentations and client approvals.</p>
                 </div>
-                <div class="border border-white/10 p-8 hover:border-accent/40 transition bg-dark/50 backdrop-blur-sm">
+                <div class="border border-white/10 p-8 hover:border-accent/40 transition">
                     <div class="text-accent text-3xl font-serif mb-6">03</div>
                     <h3 class="text-xl mb-3">Master Planning</h3>
                     <p class="text-muted text-sm leading-relaxed">Site planning, zoning studies and large-scale development layouts.</p>
@@ -133,12 +129,8 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-28 px-8 relative">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover" alt="">
-            <div class="absolute inset-0 bg-dark/80"></div>
-        </div>
-        <div class="max-w-3xl mx-auto text-center relative z-10">
+    <section class="py-28 px-6">
+        <div class="max-w-3xl mx-auto text-center">
             <h2 class="font-serif text-5xl md:text-6xl">Start a Project</h2>
             <p class="text-muted mt-6 text-lg">Share your site details. We will help you understand the possibilities and costs.</p>
             <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -149,7 +141,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 py-14 px-8 bg-card">
+    <footer class="border-t border-white/5 py-14 px-6 bg-card">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start gap-10">
                 <div>
