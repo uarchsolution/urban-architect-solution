@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Urban and Architect Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] }, colors: { dark: '#0A0A0A', accent: '#C9A227' } } } }
+    </script>
+</head>
+<body class="bg-dark text-white font-sans">
+    <header class="fixed top-0 w-full z-50 bg-dark/95 backdrop-blur border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" class="h-10" alt="Logo">
+                <span class="font-serif hidden sm:block">URBAN AND ARCHITECT SOLUTION</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-accent">Home</a>
+                <a href="portfolio.html" class="hover:text-accent">Portfolio</a>
+                <a href="about.html" class="text-accent">About</a>
+                <a href="contact.html" class="hover:text-accent">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="font-serif text-5xl mb-8">About Us</h1>
+            <p class="text-lg text-gray-300 leading-relaxed mb-8">Urban and Architect Solution is a modern architectural and urban planning firm based in Bogura, Bangladesh. Founded with a vision to deliver high-quality, BNBC-compliant designs, we specialize in residential, commercial, and master planning projects.</p>
+            <p class="text-gray-400 leading-relaxed mb-12">Our team focuses on functional, aesthetic, and sustainable architecture. From concept design and 3D visualization to detailed AutoCAD drawings and approval documentation, we handle the complete design process.</p>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <div class="border border-white/10 p-8">
+                    <h3 class="text-2xl font-serif mb-4">Our Philosophy</h3>
+                    <p class="text-gray-400">We believe in designing spaces that are not only beautiful but also practical, cost-effective, and future-ready.</p>
+                </div>
+                <div class="border border-white/10 p-8">
+                    <h3 class="text-2xl font-serif mb-4">Why Choose Us</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>• BNBC Compliant Designs</li>
+                        <li>• Realistic 3D Visualization</li>
+                        <li>• Complete Approval Support</li>
+                        <li>• Transparent Pricing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
