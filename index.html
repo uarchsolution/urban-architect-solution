@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban and Architect Solution | Designing Spaces. Defining the Future.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] },
+                    colors: { dark: '#0A0A0A', stone: '#111111', accent: '#C9A227' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white font-sans antialiased">
+    <header class="fixed top-0 w-full z-50 bg-dark/95 backdrop-blur-md border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="UAS Logo" class="h-10 w-auto">
+                <span class="font-serif text-lg tracking-wide hidden sm:block">URBAN AND ARCHITECT SOLUTION</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-accent transition">Home</a>
+                <a href="portfolio.html" class="hover:text-accent transition">Portfolio</a>
+                <a href="services.html" class="hover:text-accent transition">Services</a>
+                <a href="calculator.html" class="hover:text-accent transition">Calculator</a>
+                <a href="about.html" class="hover:text-accent transition">About</a>
+                <a href="contact.html" class="hover:text-accent transition">Contact</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+        </nav>
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-white/10">
+            <div class="px-6 py-4 space-y-4 text-sm uppercase tracking-widest">
+                <a href="index.html" class="block">Home</a>
+                <a href="portfolio.html" class="block">Portfolio</a>
+                <a href="services.html" class="block">Services</a>
+                <a href="calculator.html" class="block">Calculator</a>
+                <a href="about.html" class="block">About</a>
+                <a href="contact.html" class="block">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1920')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">Designing Spaces.<br>Defining the Future.</h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Modern architectural design, planning & approval solutions. BNBC compliant residential & commercial projects.</p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="portfolio.html" class="px-8 py-4 border border-white text-sm uppercase tracking-widest hover:bg-white hover:text-dark transition">View Projects</a>
+                <a href="calculator.html" class="px-8 py-4 bg-accent text-dark text-sm uppercase tracking-widest hover:bg-yellow-600 transition">Cost Calculator</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 group relative overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <div>
+                            <p class="text-accent text-sm uppercase tracking-widest">Residential</p>
+                            <h3 class="text-3xl font-serif mt-1">Modern Family Villa</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <h3 class="text-2xl font-serif">Commercial Plaza</h3>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-80">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <h3 class="text-2xl font-serif">Township Master Plan</h3>
+                    </div>
+                </div>
+                <div class="md:col-span-2 group relative overflow-hidden h-80">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                        <h3 class="text-2xl font-serif">Landscape & Outdoor</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="portfolio.html" class="inline-block border border-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-dark transition">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-stone">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-5xl mb-16">Our Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/10 hover:border-accent transition">
+                    <h3 class="text-2xl font-serif mb-4">Master Planning</h3>
+                    <p class="text-gray-400">Large-scale site planning, zoning, and urban design solutions.</p>
+                </div>
+                <div class="p-8 border border-white/10 hover:border-accent transition">
+                    <h3 class="text-2xl font-serif mb-4">3D Visualization</h3>
+                    <p class="text-gray-400">Photorealistic renders and walkthroughs for client presentations.</p>
+                </div>
+                <div class="p-8 border border-white/10 hover:border-accent transition">
+                    <h3 class="text-2xl font-serif mb-4">Architectural Design</h3>
+                    <p class="text-gray-400">BNBC compliant drawings, detailing, and approval documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="h-8">
+                <span>© 2026 Urban and Architect Solution</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="tel:+8801352693918" class="hover:text-white">+880 1352-693918</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+                <a href="admin.html" class="hover:text-white text-xs">Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
