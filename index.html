@@ -1,478 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Urban & Architect Solution</title>
-  <meta name="description" content="Architecture, urban planning and municipal sanction studio in Bogura. Coronation School Lane, Katnarpara.">
-  <meta name="theme-color" content="#f3efe6">
-  <link rel="icon" href="brand/mark.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,640&family=Noto+Sans+Bengali:wght@400;500;600&family=Noto+Serif+Bengali:wght@500;600&family=Outfit:wght@300;400;500;600&display=swap">
-  <style>
-    :root { --paper:#f3efe6; --ink:#1c211c; --bronze:#8a6840; --mist:#e6dfd2; --mute:#5c564c; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:Outfit,"Noto Sans Bengali",sans-serif; }
-    html[lang="bn"] body { font-family:"Noto Sans Bengali",Outfit,sans-serif; }
-    h1,h2,h3 { font-family:Fraunces,"Noto Serif Bengali",Georgia,serif; font-weight:500; text-wrap:balance; margin:0; }
-    html[lang="bn"] h1, html[lang="bn"] h2, html[lang="bn"] h3 { font-family:"Noto Serif Bengali",Georgia,serif; }
-    p { text-wrap:pretty; }
-    a { color:inherit; }
-    button, select, input, textarea { font:inherit; color:inherit; }
-    button { cursor:pointer; background:none; border:0; }
-    img { max-width:100%; display:block; }
-    .wrap { max-width:72rem; margin:0 auto; padding:0 1.25rem; }
-    .kicker { color:var(--bronze); letter-spacing:.16em; text-transform:uppercase; font-size:.75rem; }
-    .mute { color:var(--mute); }
-    .btn { display:inline-flex; min-height:3rem; align-items:center; justify-content:center; padding:0 1.25rem; text-decoration:none; font-size:.9rem; }
-    .btn-bronze { background:var(--bronze); color:var(--paper); }
-    .btn-ink { background:var(--ink); color:var(--paper); }
-    .btn-line { border:1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
-    header.bar { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid color-mix(in srgb, var(--ink) 10%, transparent); }
-    .nav { height:4rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-    .brand { display:flex; align-items:center; gap:.75rem; text-decoration:none; }
-    .brand img { height:2.5rem; width:auto; }
-    .brand small { display:block; letter-spacing:.16em; text-transform:uppercase; color:var(--bronze); font-size:.7rem; }
-    nav.links { display:none; gap:1.4rem; }
-    nav.links a { text-decoration:none; color:var(--mute); font-size:.9rem; }
-    .hero { display:grid; gap:2.5rem; padding:3.5rem 0; align-items:center; }
-    .hero h1 { font-size:clamp(2.6rem, 6vw, 4.2rem); line-height:.95; max-width:16ch; }
-    .hero p.lead { font-size:1.125rem; line-height:1.6; max-width:38rem; }
-    .row { display:flex; flex-direction:column; gap:.75rem; margin-top:1.75rem; }
-    .logo-panel { background:var(--mist); padding:1.5rem; }
-    .logo-panel img { margin:0 auto; max-height:16rem; width:auto; }
-    figure.wide img { width:100%; aspect-ratio:16/9; object-fit:cover; }
-    figure.wide figcaption, .facts, .rule { border-color:color-mix(in srgb, var(--ink) 12%, transparent); }
-    figure.wide figcaption { display:flex; justify-content:space-between; padding:.8rem 0; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--mute); }
-    .facts { display:grid; border-top:1px solid color-mix(in srgb, var(--ink) 12%, transparent); border-bottom:1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
-    .facts div { padding:1.4rem 1.25rem; }
-    .split { display:grid; gap:2.5rem; padding:4.5rem 0; }
-    .split h2, .block h2 { font-size:clamp(2rem, 4vw, 2.7rem); line-height:1.1; }
-    ol.services { list-style:none; margin:0; padding:0; }
-    ol.services li { display:grid; grid-template-columns:2.5rem 1fr; gap:.5rem 1rem; border-top:1px solid color-mix(in srgb, var(--ink) 15%, transparent); padding:1.1rem 0; }
-    ol.services strong { display:block; font-weight:500; }
-    .steps { display:grid; gap:1px; background:color-mix(in srgb, var(--ink) 15%, transparent); margin-top:1rem; }
-    .steps li { list-style:none; background:var(--paper); padding:1.2rem; }
-    .steps span { font-family:Fraunces,serif; font-size:1.8rem; color:var(--bronze); }
-    .founder { background:color-mix(in srgb, var(--mist) 65%, var(--paper)); }
-    .founder img { width:100%; aspect-ratio:3/2; object-fit:cover; }
-    .cred { display:grid; grid-template-columns:4.2rem 1fr; gap:.6rem; border-top:1px solid color-mix(in srgb, var(--ink) 15%, transparent); padding:.9rem 0; }
-    .tool { border:1px solid color-mix(in srgb, var(--ink) 15%, transparent); }
-    .fields { display:grid; gap:1px; background:color-mix(in srgb, var(--ink) 15%, transparent); }
-    .fields label { background:var(--paper); padding:1rem; display:block; }
-    .fields span, .form span { display:block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--mute); }
-    .fields input, .fields select, .form input, .form select, .form textarea { width:100%; margin-top:.45rem; background:transparent; border:0; padding:.4rem 0; }
-    .form input, .form select, .form textarea { border:1px solid color-mix(in srgb, var(--ink) 15%, transparent); padding:.75rem; background:var(--paper); }
-    .tool-body { padding:1.4rem; }
-    .budget { font-family:Fraunces,Georgia,serif; font-size:clamp(1.6rem, 3vw, 2.2rem); font-variant-numeric:tabular-nums; }
-    .bar { height:4px; background:var(--mist); margin-top:.25rem; }
-    .bar i { display:block; height:4px; background:var(--bronze); }
-    .filters { display:flex; flex-wrap:wrap; gap:.3rem; }
-    .filters button { min-height:2.75rem; padding:0 .6rem; color:var(--mute); }
-    .filters button.on { color:var(--ink); text-decoration:underline; text-decoration-color:var(--bronze); text-underline-offset:.5rem; }
-    .grid3 { display:grid; gap:1.4rem; margin-top:2rem; }
-    .grid3 button { text-align:left; padding:0; }
-    .grid3 img { width:100%; aspect-ratio:3/2; object-fit:cover; }
-    .dark { background:var(--ink); color:var(--paper); }
-    .dark .kicker { color:var(--bronze); }
-    .dark article { border-top:1px solid color-mix(in srgb, var(--paper) 22%, transparent); padding-top:1rem; }
-    .form { border:1px solid color-mix(in srgb, var(--ink) 15%, transparent); padding:1.4rem; }
-    .form .g { display:grid; gap:1rem; }
-    footer { border-top:1px solid color-mix(in srgb, var(--ink) 12%, transparent); padding:2.2rem 0; }
-    .float { position:fixed; right:1rem; bottom:1rem; z-index:30; }
-    .menu { display:none; position:fixed; inset:0; background:var(--paper); z-index:40; padding:1.4rem; }
-    .menu.open { display:block; }
-    .menu a { display:block; border-top:1px solid color-mix(in srgb, var(--ink) 10%, transparent); padding:1rem 0; font-family:Fraunces,serif; font-size:2rem; text-decoration:none; }
-    .lightbox { display:none; position:fixed; inset:0; background:color-mix(in srgb, var(--ink) 82%, transparent); z-index:50; padding:1rem; align-items:end; justify-content:center; }
-    .lightbox.open { display:flex; }
-    .lightbox figure { background:var(--paper); max-width:48rem; width:100%; margin:0; }
-    .lightbox img { width:100%; max-height:70vh; object-fit:cover; }
-    .topstrip { display:none; border-bottom:1px solid color-mix(in srgb, var(--ink) 10%, transparent); font-size:.75rem; color:var(--mute); }
-    .err { color:var(--bronze); font-size:.9rem; }
-    @media (min-width:640px) {
-      .row { flex-direction:row; }
-      .logo-panel img { max-height:20rem; }
-      .fields, .steps, .form .g { grid-template-columns:1fr 1fr; }
-      .float { display:none; }
-    }
-    @media (min-width:900px) {
-      nav.links { display:flex; }
-      #menu-btn { display:none; }
-      .topstrip { display:block; }
-      .hero, .split, .founder .wrap, .visit { grid-template-columns:1fr 1.15fr; }
-      .hero { grid-template-columns:1.2fr .8fr; }
-      .facts { grid-template-columns:repeat(4,1fr); }
-      .facts div + div { border-left:1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
-      .steps { grid-template-columns:repeat(4,1fr); }
-      .grid3 { grid-template-columns:repeat(3,1fr); }
-      .logo-panel img { max-height:none; width:100%; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban and Architect Solution | Architecture Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] },
+                    colors: { 
+                        dark: '#090909', 
+                        card: '#141414', 
+                        accent: '#D4AF37',
+                        muted: '#737373'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <div class="topstrip">
-    <div class="wrap" style="display:flex;justify-content:space-between;padding:.5rem 1.25rem">
-      <span data-en="Coronation School Lane, Katnarpara, Bogura-5800" data-bn="করোনেশন স্কুল লেন, কাটনারপাড়া, বগুড়া-৫৮০০">Coronation School Lane, Katnarpara, Bogura-5800</span>
-      <span data-en="Sat–Thu · 9:00–20:00" data-bn="শনি–বৃহস্পতি · সকাল ৯টা–রাত ৮টা">Sat–Thu · 9:00–20:00</span>
-      <a href="tel:+8801352693918">+880 1352-693918</a>
-    </div>
-  </div>
-  <header class="bar">
-    <div class="wrap nav">
-      <a class="brand" href="#top">
-        <img src="brand/mark.png" alt="">
-        <span><b style="font-weight:500">Urban & Architect</b><small>Solution</small></span>
-      </a>
-      <nav class="links">
-        <a href="#practice" data-en="Practice" data-bn="কাজ">Practice</a>
-        <a href="#founder" data-en="Founder" data-bn="প্রতিষ্ঠাতা">Founder</a>
-        <a href="#estimate" data-en="Estimate" data-bn="খরচ">Estimate</a>
-        <a href="#studies" data-en="Studies" data-bn="স্টাডি">Studies</a>
-        <a href="#visit" data-en="Visit" data-bn="যোগাযোগ">Visit</a>
-      </nav>
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <button id="lang" type="button" style="min-height:2.75rem;padding:0 .6rem">বাংলা</button>
-        <a class="btn btn-ink" href="https://wa.me/8801352693918" style="display:none" id="wa-desk">WhatsApp</a>
-        <button id="menu-btn" type="button" style="min-height:2.75rem;padding:0 .6rem" data-en="Menu" data-bn="মেনু">Menu</button>
-      </div>
-    </div>
-  </header>
-  <div class="menu" id="menu">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <span class="kicker">Urban & Architect</span>
-      <button id="menu-close" type="button" data-en="Close" data-bn="বন্ধ">Close</button>
-    </div>
-    <nav style="margin-top:2rem">
-      <a href="#practice" data-en="Practice" data-bn="কাজ">Practice</a>
-      <a href="#founder" data-en="Founder" data-bn="প্রতিষ্ঠাতা">Founder</a>
-      <a href="#estimate" data-en="Estimate" data-bn="খরচ">Estimate</a>
-      <a href="#studies" data-en="Studies" data-bn="স্টাডি">Studies</a>
-      <a href="#visit" data-en="Visit" data-bn="যোগাযোগ">Visit</a>
+<body class="bg-dark text-white font-sans antialiased">
+
+    <!-- Live Clock -->
+    <div id="liveClock" class="fixed top-5 right-5 z-50 text-xs text-muted bg-card/80 backdrop-blur px-3 py-1.5 rounded border border-white/5"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 bg-dark/95 backdrop-blur border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="h-10" onerror="this.style.display='none'">
+                <span class="font-serif text-xl tracking-wide">URBAN AND ARCHITECT SOLUTION</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-muted">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="portfolio.html" class="hover:text-white transition">Portfolio</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="calculator.html" class="hover:text-white transition">Calculator</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+            </div>
+            <a href="contact.html" class="hidden md:block text-sm bg-accent text-dark px-5 py-2 font-medium hover:bg-yellow-500 transition">Contact</a>
+        </div>
     </nav>
-  </div>
 
-  <main id="top">
-    <section class="wrap hero">
-      <div>
-        <p class="kicker" data-en="Bogura · Licensed studio · Est. 2020" data-bn="বগুড়া · লাইসেন্সপ্রাপ্ত স্টুডিও · প্রতিষ্ঠা ২০২০">Bogura · Licensed studio · Est. 2020</p>
-        <h1 data-en="Designing spaces. Defining the future." data-bn="জায়গা গড়ি। ভবিষ্যতের রূপ দেই।">Designing spaces. Defining the future.</h1>
-        <p class="lead mute" data-en="Architecture, urban planning, structural drawings and paurashava sanction — for the house, shop or factory you already have a plot for." data-bn="বাড়ি, দোকান বা কারখানার স্থাপত্য, আরবান প্ল্যানিং, স্ট্রাকচারাল ড্রয়িং এবং পৌরসভা স্যাংশন — যে প্লট আপনার হাতে আছে, সেখান থেকে।">Architecture, urban planning, structural drawings and paurashava sanction — for the house, shop or factory you already have a plot for.</p>
-        <div class="row">
-          <a class="btn btn-bronze" href="#estimate" data-en="Estimate a building" data-bn="ভবনের খরচ দেখুন">Estimate a building</a>
-          <a class="btn btn-line" id="wa-hero" href="https://wa.me/8801352693918" data-en="WhatsApp the studio" data-bn="হোয়াটসঅ্যাপে কথা বলুন">WhatsApp the studio</a>
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center relative">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover opacity-30" alt="">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent"></div>
         </div>
-      </div>
-      <div class="logo-panel">
-        <img src="brand/logo.png" alt="Urban and Architect Solution">
-      </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-8 py-32">
+            <p class="text-accent text-sm tracking-[0.3em] uppercase mb-6">Architecture Studio • Bogura</p>
+            <h1 class="font-serif text-6xl md:text-8xl leading-none max-w-4xl">Designing<br>Spaces.<br>Defining<br>the Future.</h1>
+            <p class="mt-8 text-muted text-lg max-w-xl">Modern architectural design, planning and approval solutions. BNBC compliant residential and commercial projects.</p>
+            <div class="mt-12 flex flex-col sm:flex-row gap-4">
+                <a href="portfolio.html" class="bg-accent text-dark px-8 py-4 text-sm font-medium hover:bg-yellow-500 transition text-center">View Projects</a>
+                <a href="calculator.html" class="border border-white/20 px-8 py-4 text-sm hover:bg-white hover:text-dark transition text-center">Cost Calculator</a>
+            </div>
+        </div>
     </section>
 
-    <figure class="wide">
-      <img src="studio/court.jpg" alt="">
-      <figcaption class="wrap"><span data-en="Studio study · Courtyard house" data-bn="স্টুডিও স্টাডি · উঠোনের বাড়ি">Studio study · Courtyard house</span><span>Bogura</span></figcaption>
-    </figure>
-
-    <section class="facts wrap" style="padding:0">
-      <div><p class="kicker" data-en="Licence" data-bn="লাইসেন্স">Licence</p><p data-en="Bogura Paurashava trade licence, architecture and consultancy, 2020." data-bn="বগুড়া পৌরসভা ট্রেড লাইসেন্স, স্থাপত্য ও কনসালটেন্সি, ২০২০।">Bogura Paurashava trade licence, architecture and consultancy, 2020.</p></div>
-      <div><p class="kicker" data-en="Drawings" data-bn="ড্রয়িং">Drawings</p><p data-en="Plans, sanction sheets, structure and 3D from one desk." data-bn="প্ল্যান, স্যাংশন শিট, স্ট্রাকচার ও থ্রিডি — এক ডেস্ক থেকে।">Plans, sanction sheets, structure and 3D from one desk.</p></div>
-      <div><p class="kicker" data-en="Training" data-bn="পড়াশোনা">Training</p><p data-en="Diploma in Architecture, then urban planning in Malaysia." data-bn="স্থাপত্যে ডিপ্লোমা, তারপর মালয়েশিয়ায় আরবান প্ল্যানিং।">Diploma in Architecture, then urban planning in Malaysia.</p></div>
-      <div><p class="kicker" data-en="Desk" data-bn="সময়">Desk</p><p data-en="Saturday to Thursday, nine in the morning until eight." data-bn="শনিবার থেকে বৃহস্পতিবার, সকাল নয়টা থেকে রাত আটটা।">Saturday to Thursday, nine in the morning until eight.</p></div>
+    <!-- Featured Projects -->
+    <section class="py-28 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <p class="text-accent text-sm tracking-widest uppercase mb-3">Selected Work</p>
+                    <h2 class="font-serif text-4xl md:text-5xl">Featured Projects</h2>
+                </div>
+                <a href="portfolio.html" class="text-sm text-muted hover:text-white transition hidden md:block">View All →</a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="portfolio.html" class="group block">
+                    <div class="aspect-[16/11] bg-card overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                    </div>
+                    <p class="text-accent text-xs tracking-widest uppercase">Residential</p>
+                    <h3 class="font-serif text-2xl mt-2 group-hover:text-accent transition">Modern Apartment Building</h3>
+                    <p class="text-muted text-sm mt-1">Bogura</p>
+                </a>
+                <a href="portfolio.html" class="group block">
+                    <div class="aspect-[16/11] bg-card overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                    </div>
+                    <p class="text-accent text-xs tracking-widest uppercase">Commercial</p>
+                    <h3 class="font-serif text-2xl mt-2 group-hover:text-accent transition">Urban Mixed-Use</h3>
+                    <p class="text-muted text-sm mt-1">Bogura</p>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section class="wrap split" id="practice">
-      <div>
-        <p class="kicker" data-en="The practice" data-bn="অনুশীলন">The practice</p>
-        <h2 data-en="What the drawing set actually contains." data-bn="ড্রয়িং সেটে কী কী থাকে।">What the drawing set actually contains.</h2>
-        <p class="mute" data-en="A client usually arrives with a plot sketch and a number of floors. We turn that into drawings a builder can price and a municipality can stamp." data-bn="সাধারণত ক্লায়েন্ট আসেন একটা প্লটের নাপ আর কত তলা হবে সেই হিসাব নিয়ে। আমরা সেটাকে এমন ড্রয়িং করি, যাতে মিস্ত্রি দর বুঝতে পারেন আর পৌরসভা সিল মারতে পারে।">A client usually arrives with a plot sketch and a number of floors. We turn that into drawings a builder can price and a municipality can stamp.</p>
-      </div>
-      <ol class="services" id="services"></ol>
-    </section>
-    <section class="wrap" style="padding-bottom:4rem">
-      <p class="kicker" id="steps-title" data-en="How a job moves" data-bn="একটা কাজ কীভাবে এগোয়">How a job moves</p>
-      <ol class="steps" id="steps"></ol>
-    </section>
-
-    <section class="founder" id="founder">
-      <div class="wrap split">
-        <img src="studio/interior.jpg" alt="">
-        <div>
-          <p class="kicker" data-en="Principal" data-bn="প্রধান">Principal</p>
-          <h2 data-en="Md Mahmudul Hasan" data-bn="মো. মাহমুদুল হাসান">Md Mahmudul Hasan</h2>
-          <p class="mute" data-en="Architect and urban planner · Founder" data-bn="আর্কিটেক্ট ও আরবান প্ল্যানার · প্রতিষ্ঠাতা">Architect and urban planner · Founder</p>
-          <p data-en="He opened Urban & Architect Solution in Bogura in 2020, after a diploma in architecture and a degree in urban planning and design at Limkokwing University of Creative Technology, Malaysia. The work sits between a measured drawing and the lane outside the gate." data-bn="স্থাপত্যে ডিপ্লোমা এবং মালয়েশিয়ার লিমককউইং ইউনিভার্সিটি অব ক্রিয়েটিভ টেকনোলজি থেকে আরবান প্ল্যানিং অ্যান্ড ডিজাইনে স্নাতক শেষ করে তিনি ২০২০ সালে বগুড়ায় Urban & Architect Solution খোলেন। কাজটা মাপা ড্রয়িং আর গেটের বাইরের গলির মাঝখানে।">He opened Urban & Architect Solution in Bogura in 2020, after a diploma in architecture and a degree in urban planning and design at Limkokwing University of Creative Technology, Malaysia. The work sits between a measured drawing and the lane outside the gate.</p>
-          <div id="creds" style="margin-top:1.2rem"></div>
+    <!-- Services -->
+    <section class="py-28 px-8 bg-card">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-3 text-center">Expertise</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-20">What We Do</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="border border-white/5 p-8 hover:border-accent/30 transition">
+                    <div class="text-accent text-3xl font-serif mb-6">01</div>
+                    <h3 class="text-xl mb-3">Architectural Design</h3>
+                    <p class="text-muted text-sm leading-relaxed">Complete design from concept to construction drawings. BNBC compliant detailing and documentation.</p>
+                </div>
+                <div class="border border-white/5 p-8 hover:border-accent/30 transition">
+                    <div class="text-accent text-3xl font-serif mb-6">02</div>
+                    <h3 class="text-xl mb-3">3D Visualization</h3>
+                    <p class="text-muted text-sm leading-relaxed">Photorealistic renders and walkthroughs for presentations and client approvals.</p>
+                </div>
+                <div class="border border-white/5 p-8 hover:border-accent/30 transition">
+                    <div class="text-accent text-3xl font-serif mb-6">03</div>
+                    <h3 class="text-xl mb-3">Master Planning</h3>
+                    <p class="text-muted text-sm leading-relaxed">Site planning, zoning studies and large-scale development layouts.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <section class="wrap split" id="estimate">
-      <div>
-        <p class="kicker" data-en="Planning figure" data-bn="আনুমানিক হিসাব">Planning figure</p>
-        <h2 data-en="What a building of this size tends to cost." data-bn="এই মাপের একটা ভবনে খরচ মোটামুটি কত দাঁড়ায়।">What a building of this size tends to cost.</h2>
-        <p class="mute" data-en="Enter the floor plate, the number of floors and the finish. A 2026 planning range for the Bogura region — useful before you call, not a tender." data-bn="এক তলার আয়তন, তলার সংখ্যা ও ফিনিশ দিন। এটা বগুড়া অঞ্চলের ২০২৬ সালের পরিকল্পনার একটা সীমা — ফোন করার আগে কাজে লাগে, টেন্ডার নয়।">Enter the floor plate, the number of floors and the finish. A 2026 planning range for the Bogura region — useful before you call, not a tender.</p>
-      </div>
-      <div class="tool">
-        <div class="fields">
-          <label><span data-en="Building" data-bn="ভবন">Building</span>
-            <select id="type">
-              <option value="residential">Residential house</option>
-              <option value="commercial">Commercial</option>
-              <option value="highrise">High-rise, six floors and up</option>
-              <option value="factory">Factory or shed</option>
-            </select>
-          </label>
-          <label><span data-en="Finish" data-bn="ফিনিশ">Finish</span>
-            <select id="finish">
-              <option value="standard">Standard</option>
-              <option value="premium" selected>Premium</option>
-              <option value="luxury">Luxury</option>
-            </select>
-          </label>
-          <label><span data-en="Area of one floor (sq ft)" data-bn="এক তলার আয়তন (বর্গফুট)">Area of one floor (sq ft)</span>
-            <input id="area" type="number" min="200" max="100000" value="1500">
-          </label>
-          <label><span data-en="Floors" data-bn="তলা">Floors</span>
-            <input id="floors" type="number" min="1" max="30" value="5">
-          </label>
-        </div>
-        <div class="tool-body">
-          <p class="kicker" data-en="Construction, indicative" data-bn="নির্মাণ, আনুমানিক">Construction, indicative</p>
-          <p class="budget" id="budget"></p>
-          <p class="mute" id="meta"></p>
-          <div id="parts" style="margin-top:1.2rem"></div>
-          <p class="kicker" style="margin-top:1.4rem" data-en="Design and sanction fee" data-bn="ডিজাইন ও স্যাংশন ফি">Design and sanction fee</p>
-          <p id="fee" style="font-variant-numeric:tabular-nums;font-size:1.2rem"></p>
-          <p class="mute" data-en="Not a bill of quantities and not a quotation. Soil, bylaws and the finish you buy will move the number." data-bn="এটা বিল অব কোয়ান্টিটি নয়, কোটেশনও নয়। মাটি, বিধি এবং আপনি যে ফিনিশ কিনবেন, তাতে সংখ্যা বদলাবে।">Not a bill of quantities and not a quotation. Soil, bylaws and the finish you buy will move the number.</p>
-          <button class="btn btn-ink" id="send-est" type="button" style="margin-top:1rem" data-en="Send this figure on WhatsApp" data-bn="এই হিসাব হোয়াটসঅ্যাপে পাঠান">Send this figure on WhatsApp</button>
-        </div>
-      </div>
     </section>
 
-    <section class="wrap" id="studies" style="padding:4.5rem 0">
-      <p class="kicker" data-en="Studies" data-bn="স্টাডি">Studies</p>
-      <h2 data-en="The kinds of space the studio draws." data-bn="স্টুডিও যে ধরনের জায়গা আঁকে।">The kinds of space the studio draws.</h2>
-      <p class="mute" data-en="Studio studies — the character of the work — not photographs of a named client’s finished building." data-bn="এগুলো স্টুডিও স্টাডি — কাজের চরিত্র। কোনো নামধারী ক্লায়েন্টের শেষ হওয়া ভবনের ছবি নয়।">Studio studies — the character of the work — not photographs of a named client’s finished building.</p>
-      <div class="filters" id="filters" style="margin-top:1rem"></div>
-      <div class="grid3" id="gallery"></div>
+    <!-- CTA -->
+    <section class="py-28 px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-serif text-5xl md:text-6xl">Start a Project</h2>
+            <p class="text-muted mt-6 text-lg">Share your site details. We will help you understand the possibilities and costs.</p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="calculator.html" class="bg-accent text-dark px-8 py-4 text-sm font-medium hover:bg-yellow-500 transition">Calculate Cost</a>
+                <a href="contact.html" class="border border-white/20 px-8 py-4 text-sm hover:bg-white hover:text-dark transition">Contact Us</a>
+            </div>
+        </div>
     </section>
 
-    <section class="dark" id="research">
-      <div class="wrap split">
-        <div>
-          <p class="kicker" data-en="From the planning degree" data-bn="প্ল্যানিং পড়া থেকে">From the planning degree</p>
-          <h2 data-en="Shade, rain, and the lane at the gate." data-bn="ছায়া, বৃষ্টি, আর গেটের গলি।">Shade, rain, and the lane at the gate.</h2>
-          <p data-en="The Malaysia years were spent on two questions that still sit on a Bogura plot: how a building makes its own shade, and how a gate meets a busy lane." data-bn="মালয়েশিয়ার পড়াশোনায় দুটো প্রশ্ন ছিল, যে দুটো এখনও বগুড়ার একটা প্লটে বসে: ভবন নিজে কীভাবে ছায়া বানায়, আর গেট কীভাবে ব্যস্ত গলির সাথে মেশে।">The Malaysia years were spent on two questions that still sit on a Bogura plot: how a building makes its own shade, and how a gate meets a busy lane.</p>
-          <img src="studio/garden.jpg" alt="" style="margin-top:1.5rem;aspect-ratio:3/2;object-fit:cover;width:100%">
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-14 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+                <div>
+                    <div class="font-serif text-2xl mb-3">Urban and Architect Solution</div>
+                    <p class="text-muted text-sm">Coronation School Lane, Katnarpara<br>Bogura-5800, Bangladesh</p>
+                </div>
+                <div class="flex flex-col gap-2 text-sm text-muted">
+                    <a href="tel:+8801352693918" class="hover:text-white">+880 1352-693918</a>
+                    <a href="mailto:uarchsolution@gmail.com" class="hover:text-white">uarchsolution@gmail.com</a>
+                </div>
+                <div class="flex gap-6 text-sm text-muted">
+                    <a href="portfolio.html" class="hover:text-white">Portfolio</a>
+                    <a href="services.html" class="hover:text-white">Services</a>
+                    <a href="calculator.html" class="hover:text-white">Calculator</a>
+                    <a href="contact.html" class="hover:text-white">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 mt-12 pt-8 text-xs text-muted flex justify-between">
+                <span>© 2026 Urban and Architect Solution</span>
+                <a href="admin.html" class="hover:text-white">Admin</a>
+            </div>
         </div>
-        <div style="display:flex;flex-direction:column;justify-content:end;gap:1.4rem">
-          <article>
-            <h3 data-en="A cooler plot" data-bn="একটু ঠান্ডা প্লট">A cooler plot</h3>
-            <p data-en="Cross-ventilation, a court that can hold rain, a roof that takes a tank and a few planters. A plan that is bearable in April." data-bn="ক্রস-ভেন্টিলেশন, বৃষ্টি ধরে রাখতে পারে এমন উঠোন, ট্যাংক ও কিছু টব নেয় এমন ছাদ। এপ্রিলে যাতে থাকা যায় এমন প্ল্যান।">Cross-ventilation, a court that can hold rain, a roof that takes a tank and a few planters. A plan that is bearable in April.</p>
-          </article>
-          <article>
-            <h3 data-en="A lane that still moves" data-bn="গলি যেন আটকে না যায়">A lane that still moves</h3>
-            <p data-en="Where the car waits, where a rickshaw turns, and which setback keeps the street from locking up." data-bn="গাড়ি কোথায় দাঁড়ায়, রিকশা কোথায় ঘোরে, কোন সেটব্যাকে রাস্তা বন্ধ হয় না।">Where the car waits, where a rickshaw turns, and which setback keeps the street from locking up.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <section class="wrap split visit" id="visit">
-      <div>
-        <p class="kicker" data-en="Visit" data-bn="আসুন">Visit</p>
-        <h2 data-en="Bring the plot sketch." data-bn="প্লটের নাপ নিয়ে আসুন।">Bring the plot sketch.</h2>
-        <p class="mute" data-en="The desk is on Coronation School Lane, Katnarpara. If you cannot come in, send the dimensions on WhatsApp." data-bn="ডেস্ক করোনেশন স্কুল লেন, কাটনারপাড়ায়। আসতে না পারলে হোয়াটসঅ্যাপে মাপ পাঠান।">The desk is on Coronation School Lane, Katnarpara. If you cannot come in, send the dimensions on WhatsApp.</p>
-        <p><span class="kicker" data-en="Office" data-bn="কার্যালয়">Office</span><br><span data-en="Coronation School Lane, Katnarpara, Bogura-5800" data-bn="করোনেশন স্কুল লেন, কাটনারপাড়া, বগুড়া-৫৮০০">Coronation School Lane, Katnarpara, Bogura-5800</span></p>
-        <p><span class="kicker" data-en="Phone and WhatsApp" data-bn="ফোন ও হোয়াটসঅ্যাপ">Phone and WhatsApp</span><br><a href="tel:+8801352693918">+880 1352-693918</a></p>
-        <p class="mute" data-en="Saturday to Thursday, 9:00 in the morning to 8:00 in the evening. Friday closed." data-bn="শনিবার থেকে বৃহস্পতিবার, সকাল ৯টা থেকে রাত ৮টা। শুক্রবার বন্ধ।">Saturday to Thursday, 9:00 in the morning to 8:00 in the evening. Friday closed.</p>
-        <div style="aspect-ratio:16/9;border:1px solid color-mix(in srgb, var(--ink) 15%, transparent);margin-top:1rem">
-          <iframe title="Office" style="width:100%;height:100%;border:0" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=89.355%2C24.838%2C89.385%2C24.858&layer=mapnik&marker=24.848%2C89.371"></iframe>
-        </div>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Katnarpara+Bogura+5800" data-en="Open the map" data-bn="ম্যাপ খুলুন">Open the map</a></p>
-      </div>
-      <form class="form" id="inquiry">
-        <h3 data-en="Ask for a consultation" data-bn="পরামর্শের জন্য লিখুন">Ask for a consultation</h3>
-        <div class="g" style="margin-top:1rem">
-          <label><span data-en="Name" data-bn="নাম">Name</span><input name="name" required id="iname"></label>
-          <label><span data-en="Phone" data-bn="ফোন">Phone</span><input name="phone" required inputmode="tel" id="iphone"></label>
-          <label><span data-en="What you need" data-bn="কী প্রয়োজন">What you need</span>
-            <select name="service" id="iservice"></select>
-          </label>
-          <label><span data-en="Plot location" data-bn="প্লটের জায়গা">Plot location</span><input name="place" id="iplace"></label>
-        </div>
-        <label style="display:block;margin-top:1rem"><span data-en="Plot size and what you want to build" data-bn="প্লটের মাপ ও কী বানাতে চান">Plot size and what you want to build</span>
-          <textarea name="details" required rows="4" id="idetails"></textarea>
-        </label>
-        <p class="err" id="ierr" hidden></p>
-        <button class="btn btn-bronze" type="submit" style="margin-top:1rem" data-en="Send on WhatsApp" data-bn="হোয়াটসঅ্যাপে পাঠান">Send on WhatsApp</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:end">
-      <div style="display:flex;gap:1rem;align-items:center">
-        <img src="brand/mark.png" alt="" style="height:3.4rem;width:auto">
-        <div>
-          <strong>Urban & Architect Solution</strong>
-          <p class="mute" style="margin:.2rem 0 0">Designing spaces. Defining the future.</p>
-        </div>
-      </div>
-      <p class="mute" style="margin:0">© 2020–2026 Urban & Architect Solution<br>Coronation School Lane, Katnarpara, Bogura-5800</p>
-    </div>
-  </footer>
-  <a class="btn btn-ink float" id="wa-float" href="https://wa.me/8801352693918">WhatsApp</a>
-
-  <div class="lightbox" id="light">
-    <figure>
-      <img id="light-img" alt="">
-      <figcaption style="display:flex;justify-content:space-between;gap:1rem;padding:1rem">
-        <span><b id="light-title"></b><br><span class="mute" id="light-note"></span></span>
-        <button type="button" id="light-close">Close</button>
-      </figcaption>
-    </figure>
-  </div>
-
-  <script>
-    const RATES = { residential: 2400, commercial: 2800, highrise: 3400, factory: 2200 };
-    const FINISH = { standard: 1, premium: 1.25, luxury: 1.6 };
-    const services = {
-      en: [
-        ["01","Architectural drawings","Floor plans, sections and working drawings sized to how the family or shop actually lives."],
-        ["02","Paurashava sanction","Submission sheets for Bogura Paurashava and city corporation plan approval."],
-        ["03","Structural drawings","Column layout, beams and a seismic-aware frame, coordinated with the architecture."],
-        ["04","Exterior and interior views","Elevations and room views so the finish is chosen before the brick goes up."],
-        ["05","Landscape","Courts, roof gardens and planting that survive a Bogura summer."],
-        ["06","Master planning","Plot division, township layouts and the roads and drains between them."],
-        ["07","Factories and commercial","Sheds, markets and offices, including fire-clearance layouts."],
-        ["08","Survey and soil","Total-station survey, soil investigation and site visits during construction."]
-      ],
-      bn: [
-        ["০১","স্থাপত্য ড্রয়িং","ফ্লোর প্ল্যান, সেকশন ও ওয়ার্কিং ড্রয়িং — পরিবার বা দোকান যেভাবে ব্যবহার করবে সেই মাপে।"],
-        ["০২","পৌরসভা স্যাংশন","বগুড়া পৌরসভা ও সিটি কর্পোরেশনের প্ল্যান অনুমোদনের শিট।"],
-        ["০৩","স্ট্রাকচারাল ড্রয়িং","কলাম লেআউট, বিম এবং ভূমিকম্প মাথায় রেখে ফ্রেম।"],
-        ["০৪","বাহির ও ভিতরের দৃশ্য","এলিভেশন ও ঘরের ভিউ, যাতে ইট ওঠার আগে ফিনিশ ঠিক করা যায়।"],
-        ["০৫","ল্যান্ডস্কেপ","উঠোন, ছাদবাগান ও এমন গাছ যা বগুড়ার গরমে টিকে।"],
-        ["০৬","মাস্টার প্ল্যান","প্লট ভাগ, টাউনশিপ এবং তার মাঝের রাস্তা ও ড্রেন।"],
-        ["০৭","কারখানা ও বাণিজ্য","শেড, মার্কেট, অফিস এবং ফায়ার ক্লিয়ারেন্সের লেআউট।"],
-        ["০৮","সার্ভে ও সয়েল","টোটাল স্টেশন সার্ভে, মাটি পরীক্ষা এবং সাইট ভিজিট।"]
-      ]
-    };
-    const steps = {
-      en: [["1","Plot and brief","Dimensions, road, setback and what you want on each floor."],["2","Drawings","Plan, views and structure, revised until the layout is the one you will build."],["3","Sanction","Sheets prepared for the paurashava or city corporation file."],["4","Site","Supervision when you want the drawing checked against the building."]],
-      bn: [["১","প্লট ও ব্রিফ","মাপ, রাস্তা, সেটব্যাক এবং কোন তলায় কী চাই।"],["২","ড্রয়িং","প্ল্যান, ভিউ ও স্ট্রাকচার — যে লেআউটে বাড়ি হবে।"],["৩","স্যাংশন","পৌরসভা বা সিটি কর্পোরেশনের ফাইলের জন্য শিট।"],["৪","সাইট","চাইলে নির্মাণের সময় ড্রয়িং আর মাঠ মিলিয়ে দেখা।"]]
-    };
-    const creds = {
-      en: [["2019","BA (Hons) Urban Planning and Design","Limkokwing University of Creative Technology, Malaysia"],["2014","Diploma in Architecture Studies","Bangladesh Institute of Information Technology (BITT)"],["2020","Urban & Architect Solution","Trade-licensed firm, Bogura Paurashava"]],
-      bn: [["২০১৯","বিএ (অনার্স) আরবান প্ল্যানিং অ্যান্ড ডিজাইন","লিমককউইং ইউনিভার্সিটি অব ক্রিয়েটিভ টেকনোলজি, মালয়েশিয়া"],["২০১৪","ডিপ্লোমা ইন আর্কিটেকচার স্টাডিজ","বাংলাদেশ ইনস্টিটিউট অব ইনফরমেশন টেকনোলজি (বিআইটিটি)"],["২০২০","Urban & Architect Solution","বগুড়া পৌরসভায় ট্রেড লাইসেন্সপ্রাপ্ত ফার্ম"]]
-    };
-    const studies = [
-      { cat:"residential", src:"studio/court.jpg", en:["Courtyard house","Water court, brick and a deep verandah."], bn:["উঠোনের বাড়ি","পানির উঠোন, ইট ও গভীর বারান্দা।"] },
-      { cat:"residential", src:"studio/residence.jpg", en:["Planted residential block","Six floors, brick fins, deep balconies."], bn:["গাছপালাওয়ালা আবাসিক ব্লক","ছয় তলা, ইটের ফিন, গভীর বারান্দা।"] },
-      { cat:"residential", src:"studio/interior.jpg", en:["A quiet room","Limewash, teak and one tall window."], bn:["একটা শান্ত ঘর","চুনের দেয়াল, সেগুন ও একটা জানালা।"] },
-      { cat:"commercial", src:"studio/arcade.jpg", en:["Shaded colonnade","A commercial front that keeps the walk in shade."], bn:["ছায়াওয়ালা কলোনেড","হাঁটার জায়গাটা ছায়ায় থাকে।"] },
-      { cat:"industrial", src:"studio/works.jpg", en:["Processing shed","A long span, clerestory light and a yard."], bn:["প্রসেসিং শেড","লম্বা স্প্যান, ক্লেস্টোরি আলো ও উঠোন।"] },
-      { cat:"landscape", src:"studio/garden.jpg", en:["Roof garden","Planters, a pergola and the rain."], bn:["ছাদবাগান","টব, পারগোলা ও বৃষ্টি।"] }
-    ];
-    const filters = { en:[["all","All"],["residential","Residential"],["commercial","Commercial"],["industrial","Factory"],["landscape","Landscape"]], bn:[["all","সব"],["residential","আবাসিক"],["commercial","বাণিজ্যিক"],["industrial","কারখানা"],["landscape","ল্যান্ডস্কেপ"]] };
-    const typeLabels = { en:{residential:"Residential house",commercial:"Commercial",highrise:"High-rise",factory:"Factory or shed"}, bn:{residential:"আবাসিক বাড়ি",commercial:"বাণিজ্যিক",highrise:"হাই-রাইজ",factory:"কারখানা বা শেড"} };
-    const finishLabels = { en:{standard:"Standard",premium:"Premium",luxury:"Luxury"}, bn:{standard:"সাধারণ",premium:"প্রিমিয়াম",luxury:"লাক্সারি"} };
-    const needs = { en:["Architectural plan and views","Paurashava or city corporation sanction","Structural drawings","Residential building","Commercial or market","Factory and master plan","Soil test and site supervision"], bn:["আর্কিটেকচারাল প্ল্যান ও ভিউ","পৌরসভা বা সিটি কর্পোরেশন স্যাংশন","স্ট্রাকচারাল ড্রয়িং","আবাসিক ভবন","বাণিজ্যিক বা মার্কেট","কারখানা ও মাস্টার প্ল্যান","সয়েল টেস্ট ও সাইট সুপারভিশন"] };
-    const parts = { en:[["Structure",.52],["Finish",.28],["Services",.2]], bn:[["স্ট্রাকচার",.52],["ফিনিশ",.28],["সার্ভিস",.2]] };
-
-    let lang = localStorage.getItem("uas-lang") === "bn" ? "bn" : "en";
-    let filter = "all";
-
-    function money(n) {
-      if (!n) return "—";
-      const crore = lang === "bn" ? "কোটি" : "crore";
-      const lakh = lang === "bn" ? "লাখ" : "lakh";
-      if (n >= 10000000) return "৳ " + (n/10000000).toFixed(2) + " " + crore;
-      if (n >= 100000) return "৳ " + (n/100000).toFixed(2) + " " + lakh;
-      return "৳ " + Math.round(n).toLocaleString("en-IN");
-    }
-    function applyText() {
-      document.documentElement.lang = lang;
-      document.querySelectorAll("[data-en]").forEach((el) => { el.textContent = el.dataset[lang]; });
-      document.getElementById("lang").textContent = lang === "en" ? "বাংলা" : "English";
-      const hello = lang === "bn" ? "আসসালামু আলাইকুম, Urban & Architect Solution। একটা প্লট নিয়ে কথা বলতে চাই।" : "Hello Urban & Architect Solution. I would like to talk about a plot.";
-      const url = "https://wa.me/8801352693918?text=" + encodeURIComponent(hello);
-      ["wa-hero","wa-float","wa-desk"].forEach((id) => { const a = document.getElementById(id); if (a) a.href = url; });
-      document.getElementById("wa-desk").style.display = window.matchMedia("(min-width:640px)").matches ? "inline-flex" : "none";
-      document.getElementById("services").innerHTML = services[lang].map((s) => `<li><span class="kicker">${s[0]}</span><div><strong>${s[1]}</strong><p class="mute" style="margin:.25rem 0 0">${s[2]}</p></div></li>`).join("");
-      document.getElementById("steps").innerHTML = steps[lang].map((s) => `<li><span>${s[0]}</span><p style="margin:.4rem 0 0"><b>${s[1]}</b></p><p class="mute">${s[2]}</p></li>`).join("");
-      document.getElementById("creds").innerHTML = creds[lang].map((c) => `<div class="cred"><span class="kicker">${c[0]}</span><div><b>${c[1]}</b><p class="mute" style="margin:.2rem 0 0">${c[2]}</p></div></div>`).join("");
-      const sel = document.getElementById("iservice");
-      const prev = sel.value;
-      sel.innerHTML = needs[lang].map((n) => `<option>${n}</option>`).join("");
-      if (prev) sel.selectedIndex = Math.max(0, needs.en.indexOf(prev) >= 0 ? needs.en.indexOf(prev) : needs.bn.indexOf(prev));
-      ["type","finish"].forEach((id) => {
-        const map = id === "type" ? typeLabels : finishLabels;
-        const node = document.getElementById(id);
-        const v = node.value;
-        [...node.options].forEach((op) => { op.textContent = map[lang][op.value]; });
-        node.value = v;
-      });
-      renderFilters();
-      renderGallery();
-      calc();
-      document.getElementById("light-close").textContent = lang === "bn" ? "বন্ধ" : "Close";
-      document.getElementById("ierr").textContent = lang === "bn" ? "নাম, ফোন এবং একটু বিবরণ দরকার।" : "Name, phone and a short note are required.";
-    }
-    function renderFilters() {
-      document.getElementById("filters").innerHTML = filters[lang].map(([id,label]) => `<button type="button" data-f="${id}" class="${id===filter?"on":""}">${label}</button>`).join("");
-      document.querySelectorAll("#filters button").forEach((b) => b.addEventListener("click", () => { filter = b.dataset.f; renderFilters(); renderGallery(); }));
-    }
-    function renderGallery() {
-      const items = studies.filter((s) => filter === "all" || s.cat === filter);
-      document.getElementById("gallery").innerHTML = items.map((s,i) => `<button type="button" data-i="${studies.indexOf(s)}"><img src="${s.src}" alt=""><span style="display:block;margin-top:.6rem;font-size:1.05rem">${s[lang][0]}</span><span class="mute" style="display:block;margin-top:.2rem">${s[lang][1]}</span></button>`).join("");
-      document.querySelectorAll("#gallery button").forEach((b) => b.addEventListener("click", () => openStudy(studies[Number(b.dataset.i)])));
-    }
-    function openStudy(s) {
-      document.getElementById("light-img").src = s.src;
-      document.getElementById("light-title").textContent = s[lang][0];
-      document.getElementById("light-note").textContent = s[lang][1];
-      document.getElementById("light").classList.add("open");
-    }
-    function calc() {
-      const area = Math.min(100000, Math.max(0, Number(document.getElementById("area").value) || 0));
-      const floors = Math.min(30, Math.max(1, Number(document.getElementById("floors").value) || 1));
-      const rate = RATES[document.getElementById("type").value] * FINISH[document.getElementById("finish").value];
-      const built = area * floors;
-      const cost = built * rate;
-      document.getElementById("budget").textContent = money(cost * 0.92) + " – " + money(cost * 1.08);
-      const per = lang === "bn" ? "/ বর্গফুট" : "/ sq ft";
-      const builtLabel = lang === "bn" ? "মোট" : "Built-up";
-      document.getElementById("meta").textContent = builtLabel + ": " + built.toLocaleString("en-IN") + " sq ft · ৳ " + Math.round(rate).toLocaleString("en-IN") + " " + per;
-      document.getElementById("parts").innerHTML = parts[lang].map(([name, share]) => `<div style="margin-top:.6rem"><div style="display:flex;justify-content:space-between;font-size:.8rem" class="mute"><span>${name}</span><span>${money(cost*share)}</span></div><div class="bar"><i style="width:${share*100}%"></i></div></div>`).join("");
-      document.getElementById("fee").textContent = money(built * 20) + " – " + money(built * 35);
-    }
-    document.getElementById("lang").addEventListener("click", () => { lang = lang === "en" ? "bn" : "en"; localStorage.setItem("uas-lang", lang); applyText(); });
-    ["type","finish","area","floors"].forEach((id) => document.getElementById(id).addEventListener("input", calc));
-    document.getElementById("send-est").addEventListener("click", () => {
-      const type = typeLabels[lang][document.getElementById("type").value];
-      const text = (lang === "bn" ? "আসসালামু আলাইকুম, Urban & Architect Solution।\n\nঅনলাইন হিসাব:\n" : "Hello Urban & Architect Solution,\n\nPlanning figure from your site:\n") + "• " + type + "\n• " + document.getElementById("area").value + " × " + document.getElementById("floors").value + "\n• " + document.getElementById("budget").textContent;
-      window.open("https://wa.me/8801352693918?text=" + encodeURIComponent(text), "_blank", "noopener");
-    });
-    document.getElementById("inquiry").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("iname").value.trim();
-      const phone = document.getElementById("iphone").value.trim();
-      const details = document.getElementById("idetails").value.trim();
-      const err = document.getElementById("ierr");
-      if (!name || !phone || !details) { err.hidden = false; return; }
-      err.hidden = true;
-      const text = (lang === "bn" ? "পরামর্শের অনুরোধ\n" : "Consultation request\n") + "• " + name + "\n• " + phone + "\n• " + document.getElementById("iservice").value + "\n• " + (document.getElementById("iplace").value || "—") + "\n• " + details;
-      window.open("https://wa.me/8801352693918?text=" + encodeURIComponent(text), "_blank", "noopener");
-    });
-    document.getElementById("menu-btn").addEventListener("click", () => document.getElementById("menu").classList.add("open"));
-    document.getElementById("menu-close").addEventListener("click", () => document.getElementById("menu").classList.remove("open"));
-    document.querySelectorAll("#menu a").forEach((a) => a.addEventListener("click", () => document.getElementById("menu").classList.remove("open")));
-    document.getElementById("light-close").addEventListener("click", () => document.getElementById("light").classList.remove("open"));
-    document.getElementById("light").addEventListener("click", (e) => { if (e.target.id === "light") document.getElementById("light").classList.remove("open"); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { document.getElementById("menu").classList.remove("open"); document.getElementById("light").classList.remove("open"); } });
-    applyText();
-  </script>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const options = { weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            document.getElementById('liveClock').textContent = now.toLocaleString('en-BD', options);
+        }
+        updateClock();
+        setInterval(updateClock, 60000);
+    </script>
 </body>
 </html>
