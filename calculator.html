@@ -47,7 +47,12 @@
                                 <option value="1800">Standard (৳1,800 / sft)</option>
                                 <option value="2500" selected>Premium (৳2,500 / sft)</option>
                                 <option value="3500">Luxury (৳3,500 / sft)</option>
+                                <option value="custom">Custom Rate (per sft)</option>
                             </select>
+                        </div>
+                        <div id="customRateDiv" class="hidden">
+                            <label class="block text-sm text-gray-400 mb-1">Your Custom Rate (৳ per sft)</label>
+                            <input type="number" id="customRate" placeholder="e.g. 2200" class="w-full bg-dark border border-white/20 px-4 py-3 focus:border-accent outline-none">
                         </div>
                         <button onclick="calcBuilding()" class="w-full bg-accent text-dark py-3 uppercase tracking-widest text-sm font-medium">Calculate Building Cost</button>
                         <div id="buildingResult" class="mt-6 p-5 bg-dark border border-accent/30 hidden">
@@ -72,7 +77,12 @@
                                 <option value="55" selected>Standard (৳55 / sft)</option>
                                 <option value="75">Premium (৳75 / sft)</option>
                                 <option value="100">Full Package (৳100 / sft)</option>
+                                <option value="custom">Custom Rate (per sft)</option>
                             </select>
+                        </div>
+                        <div id="customDesignRateDiv" class="hidden">
+                            <label class="block text-sm text-gray-400 mb-1">Your Custom Design Rate (৳ per sft)</label>
+                            <input type="number" id="customDesignRate" placeholder="e.g. 60" class="w-full bg-dark border border-white/20 px-4 py-3 focus:border-accent outline-none">
                         </div>
                         <button onclick="calcDesign()" class="w-full bg-accent text-dark py-3 uppercase tracking-widest text-sm font-medium">Calculate Design Charge</button>
                         <div id="designResult" class="mt-6 p-5 bg-dark border border-accent/30 hidden">
@@ -91,16 +101,32 @@
         function formatBDT(num) {
             return '৳ ' + num.toLocaleString('en-IN');
         }
+
+        document.getElementById('quality').addEventListener('change', function() {
+            document.getElementById('customRateDiv').classList.toggle('hidden', this.value !== 'custom');
+        });
+
+        document.getElementById('designRate').addEventListener('change', function() {
+            document.getElementById('customDesignRateDiv').classList.toggle('hidden', this.value !== 'custom');
+        });
+
         function calcBuilding() {
             const area = parseFloat(document.getElementById('area').value) || 0;
-            const rate = parseFloat(document.getElementById('quality').value);
+            let rate = parseFloat(document.getElementById('quality').value);
+            if (document.getElementById('quality').value === 'custom') {
+                rate = parseFloat(document.getElementById('customRate').value) || 0;
+            }
             const total = area * rate;
             document.getElementById('buildingCost').innerText = formatBDT(total);
             document.getElementById('buildingResult').classList.remove('hidden');
         }
+
         function calcDesign() {
             const area = parseFloat(document.getElementById('designArea').value) || 0;
-            const rate = parseFloat(document.getElementById('designRate').value);
+            let rate = parseFloat(document.getElementById('designRate').value);
+            if (document.getElementById('designRate').value === 'custom') {
+                rate = parseFloat(document.getElementById('customDesignRate').value) || 0;
+            }
             const total = area * rate;
             document.getElementById('designCost').innerText = formatBDT(total);
             document.getElementById('designResult').classList.remove('hidden');
